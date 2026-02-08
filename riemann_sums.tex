@@ -1,0 +1,63 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,geometry,graphicx,booktabs}
+
+\geometry{margin=1in}
+\title{Riemann Sums}
+\author{Calculus Notes}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+A \textbf{Riemann sum} approximates the definite integral \(\int_a^b f(x)\,dx\) by dividing the interval \([a,b]\) into \(n\) subintervals and summing the areas of rectangles whose heights are given by the function \(f\).
+
+\section{Setup}
+
+\begin{itemize}
+  \item Partition: \(a = x_0 < x_1 < \cdots < x_n = b\)
+  \item Subinterval width: \(\Delta x = \frac{b-a}{n}\) (equal subintervals)
+  \item Sample point in \([x_{i-1}, x_i]\): \(x_i^*\)
+\end{itemize}
+
+\section{Definition}
+
+The Riemann sum is
+\[
+  S_n = \sum_{i=1}^{n} f(x_i^*)\, \Delta x.
+\]
+
+\section{Common choices for \(x_i^*\)}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{ll}
+    \toprule
+    Type & \(x_i^*\) \\
+    \midrule
+    Left   & \(x_{i-1}\) \\
+    Right  & \(x_i\) \\
+    Midpoint & \(\frac{x_{i-1}+x_i}{2}\) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Example}
+
+Let \(f(x)=x^2\) on \([0,2]\) with \(n=4\), \(\Delta x = \frac{1}{2}\).
+
+\textbf{Left sum:}
+\[
+  S_4^{\text{left}} = f(0)\cdot\frac{1}{2} + f(0.5)\cdot\frac{1}{2} + f(1)\cdot\frac{1}{2} + f(1.5)\cdot\frac{1}{2}
+  = 0 + 0.125 + 0.5 + 1.125 = 1.75.
+\]
+
+The exact integral is \(\int_0^2 x^2\,dx = \frac{8}{3} \approx 2.667\). As \(n\to\infty\), \(S_n \to \int_a^b f(x)\,dx\).
+
+\section{Limit definition of the integral}
+
+\[
+  \int_a^b f(x)\,dx = \lim_{n\to\infty} \sum_{i=1}^{n} f(x_i^*)\, \Delta x.
+\]
+\end{document}

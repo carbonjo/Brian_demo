@@ -1,0 +1,21 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+.eggs/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# LaTeX build (keep .tex; optional: remove *.pdf to exclude built PDFs)
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+
+# OS
+.DS_Store

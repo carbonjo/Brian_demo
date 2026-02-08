@@ -1,0 +1,62 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\title{Riemann Sums}
+\subtitle{Approximating the definite integral}
+\author{Calculus}
+\date{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{What is a Riemann sum?}
+  \begin{itemize}
+    \item Approximates \(\displaystyle\int_a^b f(x)\,dx\)
+    \item Divide \([a,b]\) into \(n\) subintervals
+    \item Build rectangles; sum their areas
+  \end{itemize}
+  \[
+    S_n = \sum_{i=1}^{n} f(x_i^*)\, \Delta x, \quad \Delta x = \frac{b-a}{n}
+  \]
+\end{frame}
+
+\begin{frame}{Left, Right, Midpoint}
+  \begin{block}{Sample point \(x_i^*\)}
+    \begin{itemize}
+      \item \textbf{Left:} \(x_i^* = x_{i-1}\)
+      \item \textbf{Right:} \(x_i^* = x_i\)
+      \item \textbf{Midpoint:} \(x_i^* = \frac{x_{i-1}+x_i}{2}\)
+    \end{itemize}
+  \end{block}
+  Different choices give different approximations; all tend to the same limit as \(n\to\infty\).
+\end{frame}
+
+\begin{frame}{Limit = Integral}
+  \[
+    \int_a^b f(x)\,dx = \lim_{n\to\infty} \sum_{i=1}^{n} f(x_i^*)\, \Delta x
+  \]
+  \vspace{1em}
+  As \(n\) increases, the Riemann sum gets closer to the true area under the curve.
+\end{frame}
+
+\begin{frame}{Example: \(f(x)=x^2\) on \([0,2]\)}
+  \begin{itemize}
+    \item \(n=4\), \(\Delta x = \frac{1}{2}\)
+    \item Left sum: \(S_4 \approx 1.75\)
+    \item Exact: \(\int_0^2 x^2\,dx = \frac{8}{3} \approx 2.667\)
+  \end{itemize}
+  \vspace{0.5em}
+  Try larger \(n\) (e.g.\ in the notebook or Flask app) to see the approximation improve.
+\end{frame}
+
+\begin{frame}{Summary}
+  \begin{itemize}
+    \item Riemann sum = sum of rectangle areas
+    \item Left/right/midpoint = different sample points
+    \item Limit as \(n\to\infty\) equals the definite integral
+  \end{itemize}
+\end{frame}
+
+\end{document}
